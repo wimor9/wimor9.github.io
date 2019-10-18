@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Python 中的迭代、可迭代對象、迭代器的關係 (iteration, iterable, iterator)</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">wimor9 </a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/technic.html">technic</a></li>
+                    <li><a href="/category/thoughts.html">Thoughts</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/drafts/python-zhong-de-die-dai-ke-die-dai-dui-xiang-die-dai-qi-de-guan-xi-iteration-iterable-iterator.html" rel="bookmark"
+           title="Permalink to Python 中的迭代、可迭代對象、迭代器的關係 (iteration, iterable, iterator)">Python 中的迭代、可迭代對象、迭代器的關係 (iteration, iterable, iterator)</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2019-10-08T00:00:00+08:00">
+                Published: Tue 08 October 2019
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/wimor9.html">wimor9</a>
+        </address>
+<p>In <a href="/category/technic.html">technic</a>.</p>
+<p>tags: <a href="/tag/control-flow.html">control flow</a> <a href="/tag/iteraion.html">iteraion</a> <a href="/tag/data-type.html">data type</a> </p>
+</footer><!-- /.post-info -->      <ul>
+<li>control_flow</li>
+<li>sequence</li>
+<li>selection</li>
+<li>looping<ul>
+<li>iteration (本篇目標)<ul>
+<li>iterable</li>
+<li>iterator</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>在寫程式的時候，有三個獨立的概念讓我們可以進行流程控制 (control flow)，也就是序列 (sequence)、選擇 (selection / branch) 和迴圈 (looping) ，有了它們讓我們得以對資料上下其手？而要使用迴圈這個概念，最最最基本一定要滿足下列三個條件，那就可以說它是一個迴圈：
+   - 需要確認「你需要重複做」的那件事 -&gt; 我想看完三國志 1 ~ 30 集
+   - 需要確認「重複執行動作」的細節 -&gt; 打開、看完、闔上、放在另一堆...
+   - 明確指出在什麼情況持續重複、什麼情況停止 (termination) -&gt; 30 集都放在看完的那堆了</p>
+<p>在迴圈的概念之上，有個概念叫做迭代 (iteration) ，但它把 termination 這個開關給拿掉了，就是書櫃上有三十本，把三十本全部逐一看完，這種遍歷 (traverse) ，一個接著一個，每個都拿的過程就叫迭代。而想要解釋 Python 中 iterable 和 iterator 的關係，最根本的問題就是，當你寫出 <code>for i in s</code> 這個迭代，直譯器到底做了什麼？</p>
+<p>先講結論， 直譯器會去判斷物件是不是可迭代對象 (iterable) ？ Python 是以新舊機制來分別支援迭代，所以端看物件是否有特定方法 (<strong>iter</strong>, <strong>getitem</strong>) ，不支援的話該物件就不是可迭代對象。直譯器的判斷順序會是，如果物件有 <strong>iter</strong> ，那就使用新迭代 &gt; 如果沒有 <strong>iter</strong> ，那判斷物件有沒有 <strong>getitem</strong> ， 有就使用舊迭代 &gt; 如果兩個都沒有，那該物件就不是可迭代對象。</p>
+<p>可迭代對象 (iterable) 是一個你可以迭代的東西
+直譯器使用迭代器完成迭代</p>
+<p>itertion
+iterable
+iterator</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
