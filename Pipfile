@@ -9,7 +9,7 @@ verify_ssl = true
 pelican = "*"
 markdown = "*"
 ghp-import = "*"
-pycrypto = "*"
+pycrypto = "==2.6.1"
 
 [requires]
 python_version = "3.7"
