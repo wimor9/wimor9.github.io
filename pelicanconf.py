@@ -35,7 +35,8 @@ DEFAULT_PAGINATION = 5
 #RELATIVE_URLS = True
 
 STATIC_PATH = ['images']
-PLUGINS = ['encrypt_content']
+PLUGIN_PATHS = ['./plugins']
+PLUGINS = ['encrypt_content.markup']
 ENCRYPT_CONTENT = {
     'title_prefix': '[Encrypted]',
     'summary': 'This content is encrypted.'
